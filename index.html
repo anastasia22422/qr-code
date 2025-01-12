@@ -9,55 +9,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { Layout } from './layout';
-import { QrCodeGenerator } from './qr_generate';
-
-createRoot(document.getElementById('root')).render(
-  <Layout/>,
-)
-  
-import { QrCodeGenerator } from './qr_generate';
-
-export const Layout = () => {
-  return (
-    <div>
-      <QrCodeGenerator />
-    </div>
-  );
-};
-      
-import { useState } from 'react';
-import { QRCodeSVG } from 'qrcode.react';
-import './main.css';
-
-export const QrCodeGenerator = () => {
-  const [value, setValue] = useState('Hello');
-  const [result, setResult] = useState('');
-
-  const onClickHandler = (event) => {
-    setResult(value);
-    setValue('');
-  };
-
-  const onChangeHandler = (event) => {
-    setValue(event.target.value);
-    setResult('');
-  };
-
-  return (
-    <div className='container'>
-      {result !== '' && (
-        <QRCodeSVG className='qrcode' value={result} />
-      )}
-
-      <input className='input' type="text" value={value} onChange={onChangeHandler}/>
-      <button className='button' type="button" onClick={onClickHandler}>Generate QR</button>
-    </div>
-  );
-}
-    </script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
