@@ -10,7 +10,16 @@
   <body>
     <div id="root"></div>
     <script>
+import { QrCodeGenerator } from './qr_generate';
 
+export const Layout = () => {
+  return (
+    <div>
+      <QrCodeGenerator />
+    </div>
+  );
+};
+      
 import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import './main.css';
